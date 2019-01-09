@@ -34,9 +34,8 @@ defmodule Rpn.Calculator do
   end
 
   def handle_call({:push, :=}, _from, [result]) do
-    IO.inspect("Result #{result}")
     new_state = []
-    {:reply, new_state, new_state}
+    {:reply, result, new_state}
   end
 
   def handle_call({:push, operand}, _from, state) when is_number(operand) do

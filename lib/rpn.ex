@@ -3,7 +3,6 @@ defmodule Rpn do
     expression
     |> String.split(" ")
     |> Enum.map(&convert/1)
-    |> IO.inspect()
     |> Enum.each(&Rpn.Calculator.push/1)
   end
 
